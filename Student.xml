@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Student xmlns:tns="http://www.atulanand.com/StudentSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.atulanand.com/StudentSchema StudentSchema.xsd ">
+  <tns:Name>
+    <tns:FirstName>Atul</tns:FirstName>
+    <tns:LastName>Anand</tns:LastName>
+  </tns:Name>
+  <tns:Class>11</tns:Class>
+  <tns:Section>B</tns:Section>
+  <tns:DateOfBirth>2001-01-01</tns:DateOfBirth>
+  <tns:Gender>Male</tns:Gender>
+  <tns:Address>
+    <tns:Line1>221B Baker Street</tns:Line1>
+    <tns:State>Bihar</tns:State>
+    <tns:City>Patna</tns:City>
+    <tns:Pincode>800001</tns:Pincode>
+  </tns:Address>
+</tns:Student>

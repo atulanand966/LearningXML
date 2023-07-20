@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.atulanand.com/StudentSchema"
+	xmlns:tns="http://www.atulanand.com/StudentSchema"
+	elementFormDefault="qualified">
+
+	<element name="Student" type="tns:Student" />
+
+	<complexType name="Student">
+		<sequence>
+			<element name="Name" type="tns:Name" />
+			<element name="Class" type="tns:ValueFrom1To12" />
+			<element name="Section" type="tns:ValueFromAToF" />
+			<element name="DateOfBirth" type="date" />
+			<element name="Gender" type="tns:Gender" />
+			<element name="Address" type="tns:Address" />
+			<element name="Hobby" type="string" maxOccurs="unbounded"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Name">
+		<sequence>
+			<element name="FirstName" type="string" />
+			<element name="LastName" type="string" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="ValueFrom1To12">
+		<restriction base="integer">
+			<minInclusive value="1" />
+			<maxInclusive value="12" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="ValueFromAToF">
+		<restriction base="string">
+			<pattern value="[A-F]{1}"></pattern>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="Gender">
+		<restriction base="string">
+			<enumeration value="Male" />
+			<enumeration value="Female" />
+			<enumeration value="Other" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="Address">
+		<all>
+			<element name="Line1" type="string" />
+			<element name="State" type="string" />
+			<element name="City" type="string" />
+			<element name="Pincode" type="tns:Pincode" />
+		</all>
+	</complexType>
+
+	<simpleType name="Pincode">
+		<restriction base="integer">
+			<pattern value="[0-9]{6}"></pattern>
+		</restriction>
+	</simpleType>
+</schema>
